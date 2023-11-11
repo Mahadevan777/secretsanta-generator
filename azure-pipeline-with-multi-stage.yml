@@ -9,7 +9,7 @@ pool:
 stages:
 #stage 1 stageA----------------------------------------------------------------------------------
   - stage: stageA
-    displayName: "stage ADis"
+    displayName: "stage 1 A Dis"
     jobs:
       - job: jobA
         displayName: "JobA"
@@ -26,7 +26,7 @@ stages:
 #stage 2 stageB----------------------------------------------------------------------------------
   - stage: stageB
     dependsOn: stageD
-    displayName: "stage B dis"
+    displayName: "stage 2 B Dis"
     jobs:
       - job: JobA2
         displayName: "jobA2-dis"
@@ -46,7 +46,7 @@ stages:
 #stage 3 stageC----------------------------------------------------------------------------------
   - stage: stageC
     dependsOn: stageA
-    displayName: "stage C dis"
+    displayName: "stage 3 C Dis"
     jobs:
       - job: JobA2
         displayName: "jobA2-dis"
@@ -64,7 +64,7 @@ stages:
 #stage 4 stageD----------------------------------------------------------------------------------
   - stage: stageD
     dependsOn: stageC
-    displayName: "stage B dis"
+    displayName: "stage 4 D Dis"
     jobs:
       - job: JobA2
         displayName: "jobA2-dis"
