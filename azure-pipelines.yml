@@ -1,0 +1,39 @@
+# Starter pipeline
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: stageA
+    displayName: "stage ADis"
+    jobs:
+      - job: jobA
+        displayName: "JobA"
+        steps: 
+          - script: echo Hello, world!JobA
+            displayName: "Run a one-line script"
+      - job: JobB
+        displayName: "JobB_display"
+        steps:
+          - script: echo Hello, JobB-Script
+            displayName: "Run a one line Job b"
+
+
+#stage 2 stageB
+  - stage: stageB
+    displayName: "stage B dis"
+    jobs:
+      - job: JobA2
+        displayName: "jobA2-dis"
+        steps:
+          - script: echo Hello, world!JobA-2
+      - job: JobB2
+        displayName: "JobB-dis"
+        steps:
+          - script: |
+                echo Hello, world!JobB-2
+                echo Hello, world!JobB-2
+          
