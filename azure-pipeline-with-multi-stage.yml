@@ -36,7 +36,7 @@ stages:
           - script: |
                 echo Hello, world!JobB-2
                 echo Hello, world!JobB-2
-                echo HI MAHADEV YOUR PIPELINE COMPLETED SUCCESSFULLY
+                echo HI MAHADEV YOUR PIPELINE COMPLETED SUCCESSFULLY- Lets-Go---
                 
             displayName: "Run a Multi line Job b"
 
