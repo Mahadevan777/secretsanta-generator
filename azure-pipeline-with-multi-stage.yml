@@ -36,6 +36,6 @@ stages:
           - script: |
                 echo Hello, world!JobB-2
                 echo Hello, world!JobB-2
-                displayName: "Run a Multi line Job b"
+            displayName: "Run a Multi line Job b"
 
           
