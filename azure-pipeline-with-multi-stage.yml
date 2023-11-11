@@ -7,6 +7,7 @@ pool:
   vmImage: ubuntu-latest
 
 stages:
+#stage 1 stageA----------------------------------------------------------------------------------
   - stage: stageA
     displayName: "stage ADis"
     jobs:
@@ -22,9 +23,9 @@ stages:
             displayName: "Run a one line Job b"
 
 
-#stage 2 stageB
+#stage 2 stageB----------------------------------------------------------------------------------
   - stage: stageB
-    dependsOn: stageA
+    dependsOn: stageD
     displayName: "stage B dis"
     jobs:
       - job: JobA2
@@ -41,4 +42,41 @@ stages:
                 
             displayName: "Run a Multi line Job b"
 
+
+#stage 3 stageC----------------------------------------------------------------------------------
+  - stage: stageC
+    dependsOn: stageA
+    displayName: "stage C dis"
+    jobs:
+      - job: JobA2
+        displayName: "jobA2-dis"
+        steps:
+          - script: echo Hello, world!JobA-2
+      - job: JobB2
+        displayName: "JobB-dis"
+        steps:
+          - script: |
+                echo Hello, world!JobB-2
+                echo Mahadev-Stage 3 Mahadev-Stage 3 Mahadev-Stage 3 Mahadev-Stage 3 Mahadev-Stage 3
+            displayName: "Run a Multi line Job b"
           
+
+#stage 4 stageD----------------------------------------------------------------------------------
+  - stage: stageD
+    dependsOn: stageC
+    displayName: "stage B dis"
+    jobs:
+      - job: JobA2
+        displayName: "jobA2-dis"
+        steps:
+          - script: echo Hello, world!JobA-2
+      - job: JobB2
+        displayName: "JobB-dis"
+        steps:
+          - script: |
+                echo Hello, world!JobB-2
+                echo Hello, world!JobB-2
+                echo Mahadev-Stage 4 Mahadev-Stage 4 Mahadev-Stage 4 Mahadev-Stage 4 Mahadev-Stage 4
+                echo HI MAHADEV YOUR PIPELINE COMPLETED SUCCESSFULLY- Lets-Go---
+                
+            displayName: "Run a Multi line Job b-LAST_JOBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
