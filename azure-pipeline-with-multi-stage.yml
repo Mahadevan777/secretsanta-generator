@@ -8,7 +8,6 @@ pool:
 
 stages:
   - stage: stageA
-    dependsOn: stageB
     displayName: "stage ADis"
     jobs:
       - job: jobA
@@ -25,6 +24,7 @@ stages:
 
 #stage 2 stageB
   - stage: stageB
+    dependsOn: stageA
     displayName: "stage B dis"
     jobs:
       - job: JobA2
